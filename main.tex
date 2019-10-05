@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+
+\title{Bewijzen en Redeneren voor Informatici}
+\date{2019 - 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Verzamelingen}
+
+Aantal veschillende elementen behandeld als 1 ding: K = \{a,b,...\}
+Geschreven als opsomming : \{a,b,c\}, of omschrijving : \{ x \big| x is een klinker \} met x een variabele.
+
+\begin{itemize}
+\item $\emptyset : leeg , \{a\} : singleton , \{a,b\} : paar, \mathbb{N} : oneindige verzameling$
+\item Intervallen: \newline
+    \{ x $\in \: \mathbb{R} \: \big| \: 0 < x < 1 \} = \: ]0,1[ \: $: open \newline
+    \{ x $\in \: \mathbb{R} \: \big| \: a \leq x \leq b \} = [a,b] \: $: gesloten \newline
+    \{ x $\in \: \mathbb{R} \: \big| \: x \leq a \} = \: ]-\infty,a] \: $: oneindig
+\item Deelverzamelingen: \newline
+    A $\subseteq$ B : A is een deelverzameling van B $\Rightarrow$ "$\forall x \: \in \: A$ geldt: $x \: \in \: B$" \newline
+    A $\subset$ B : A is een strikte deelverzameling van B $\Rightarrow$ A $\neq$ B
+\end{itemize}
+
+\subsection{Operaties op verzamelingen}
+\begin{itemize}
+    \item doorsnede: A $\cap$ B = \{ x \big| x $\in$ A en x $\in$ B \}
+    \item unie: A $\cup$ B = \{ x \big| x $\in$ A of x $\in$ B \}
+    \item verschil: A $\setminus$ B = \{ x \big| x $\in$ A en x $\notin$ B \}
+    \item complement: A\textsuperscript{C} = \{ x \big| x $\notin$ A\} = U $\setminus$ A (U = universum)
+    \item symmetrisch verschil: A $\bigtriangleup$ B = (A $\setminus$ B) $\cup$ (B $\setminus$ A)
+\end{itemize}
+A en B zijn disjunct: A $\cap$ B = $\emptyset$ \newline
+A $\setminus$ B = A$\setminus(A \cap B)$ = $A \cap B\textsuperscript{C}$ \newline
+associatief: volgorde operaties maakt niet uit \newline
+commutatief: volgorde verzamelingen maakt niet uit: $A \cup B = B \cup A$ \newline
+distributief: operatie te verdelen binnen haakjes: $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ \newline $\Rightarrow A \cap B \cap A\textsuperscript{C} = B \cap (A \cap A\textsuperscript{C}) = B \cap \emptyset = \emptyset$ \newline
+$\bigcup_{i=1}^{n} A_{i}$ = unies $A_{1}$ tot $A_{n}$ (zelfde met $\bigcap$) \newline
+
+\subsection{De Morgan}
+\begin{itemize}
+    \item $(A \cup B)^C = A^C \cap B^C$
+    \item $(A \cap B)^C = A^C \cup B^C$
+    \item $A \cup A = A = A \cap A$
+    \item $A \setminus A = \emptyset$
+\end{itemize}
+
+\subsection{Machtsverzamelingen}
+De machtsverzameling van A: P(A), is de verzameling van alle deelverzamelingen van A. \newline
+    $A = \{1,2\} \Rightarrow P(A) = \{\{1\},\{2\},\{1,2\},\emptyset\}$ \newline
+aantal elementen van A = $|A|$ = \#A = 2, \#P(A) = 4
+\end{document}
