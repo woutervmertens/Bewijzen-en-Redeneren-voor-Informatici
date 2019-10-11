@@ -52,4 +52,65 @@ $\bigcup_{i=1}^{n} A_{i}$ = unies $A_{1}$ tot $A_{n}$ (zelfde met $\bigcap$) \ne
 De machtsverzameling van A: P(A), is de verzameling van alle deelverzamelingen van A. \newline
     $A = \{1,2\} \Rightarrow P(A) = \{\{1\},\{2\},\{1,2\},\emptyset\}$ \newline
 aantal elementen van A = $|A|$ = \#A = 2, \#P(A) = 4
+
+\section{Precieze uitspraken}
+Doel: dubbelzinnigheden vermijden $\Rightarrow$ wiskundige notatie gebruiken
+\begin{itemize}
+    \item Conjunctie: $P \land Q$ : en
+    \item Disjunctie: $P \lor Q$ : of (inclusief)
+    \item Negatie: $\neg P$ : niet
+    \item Implicatie: $P \Rightarrow Q$ : P dan Q
+    \item Equivalentie: $P \iff Q$ : P asa Q
+\end{itemize} 
+Prioriteit: $"\neg" > "\land" > "\lor" > "\Rightarrow / \iff" $, of haakjes zetten \newline
+Logische equivalentie: $\equiv$ : heel de waarheidstabel: alle lijnen moeten hetzelfde zijn
+\begin{itemize}
+    \item Tautologie: altijd waar: vb $P \lor \neg P$
+    \item Contradictie: altijd onwaar: vb $P \land \neg P$
+    \item $\neg (\forall x \in A: P(x)) = \exists x \in A: \neg P(x)$
+    \item $\neg (\exists x \in A: P(x)) = \forall x \in A: \neg P(x)$
+\end{itemize}
+predikaat P, P(x) is bewering \newline
+
+Stel: S is een verzameling, B(x) beweert $x \in S$, P(x) is willekeurige bewering voor x:
+
+    \[\forall x \in S: P(x) \longrightarrow \forall x: B(x) \Rightarrow P(x)\]
+    \[\exists x \in S: P(x) \longrightarrow \exists x: B(x) \land P(x)\]
+
+$P \Rightarrow Q \equiv \neg P \lor Q$ \newline
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    logisch & verzameling \\
+    \hline
+    $\lor$ & $\cup$\\
+    $\land$ & $\cap$\\
+    $\neg$ & \textsuperscript{C}\\
+    \hline
+    \end{tabular}
+\end{center}
+Hieruit volgt dat de logische ook commutatief en associatief zijn en de regels van De Morgan volgen, want:
+\begin{itemize}
+    \item $A \cup B = \{x \big| x \in A \lor x\in B\}$
+    \item $A \cap B = \{x \big| x \in A \land x\in B\}$
+    \item $A\textsuperscript{C} = \{x \big| \neg(x \in A)\}$
+\end{itemize}
+dus De Morgan:
+\begin{itemize}
+    \item $\neg(P \lor Q) \equiv \neg P \land \neg Q$
+    \item $\neg(P \land Q) \equiv \neg P \lor \neg Q$
+\end{itemize}
+\section{Opbouw van theorieën}
+Opgebouwt met:
+\begin{itemize}
+    \item definities
+    \item notatie-afspraken
+    \item eigenschappen
+    \item axiomas: definiërende eigenschappen
+    \item stellingen: niet bewezen
+    \item bewijzen
+    \item lemmas = hulpstellingen
+\end{itemize}
+
 \end{document}
