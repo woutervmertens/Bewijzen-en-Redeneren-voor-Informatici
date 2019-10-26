@@ -115,6 +115,41 @@ Opgebouwt met:
     \item lemmas = hulpstellingen
 \end{itemize}
 
+\section{Bewijzen}
+Context/nut:
+\begin{itemize}
+    \item correctheid van algoritmen
+    \item eindigheid van algoritmen
+    \item efficiënte oplosbaarheid/complexiteit van problemen
+\end{itemize}
+Soorten
+\begin{itemize}
+    \item per Vaststelling: $(P \Rightarrow Q) \equiv (\neg P \lor Q)$ : waarheidstabellen uitschrijven: zijn gelijk
+    \item per Constructie (speciale soort Vaststelling) : $\exists x: P(x)$ : vind een x waarvoor het klopt
+    \item per Tekening (speciale soort Vaststelling) : teken beide zijden van equivalentie  
+\end{itemize}
+Bewijsstappen (1 stap):
+\begin{itemize}
+    \item substitutie:
+        \begin{itemize}
+            \item voor een universeel gekwantificeerde variabele ("voor alle verzamelingen X") 1 waarde invullen: $\forall \rightarrow \exists$
+            \item een uitdrukking vervangen door een equivalente uitdrukking
+        \end{itemize}
+    \item gebruik de definities: vervormen naar iets dat al bewezen is/onmogelijk is
+    \item modus ponens: als P waar is en P impliceert Q waar, dan is Q waar
+\end{itemize}
+Bewijsstrategieën:
+\begin{itemize}
+    \item ketens van gelijkheden/ongelijkheden/equivalenties/implicaties: op basis van transitiviteit
+    \item wederzijdse implicaties : $P \Rightarrow Q \land Q \Rightarrow P \rightarrow P \iff Q$
+    \newline variant: wederzijdse inclusie: A = B via $A \subseteq B \land B \subseteq A$
+    \item herhaalde gevolgstrekking: meerdere modus ponens
+    \item gevalsonderscheiding: verschillende mogelijkheden apart beschouwen
+    \item in het ongerijmde: als niet waar dan is iets wat niet waar is waar $\Rightarrow$ waar
+    \item door inductie
+\end{itemize}
+
+
 \section{Oefeningen}
 \href{https://docs.google.com/spreadsheets/d/1thtWaGEHPFeVuYDWK-XKuEimLSO2Zc_yDwdODAbYIok/edit#gid=0}{Google Spreadsheet}
 \end{document}
