@@ -149,6 +149,49 @@ Bewijsstrategieën:
     \item door inductie
 \end{itemize}
 
+\section{Functies}
+\begin{itemize}
+    \item relatie $R \subseteq A x B$ is functie A naar B asa voor elke x $\in$ A hoogstens 1 (x,y) $\in$ R bestaat.
+    \begin{itemize}
+        \item y: beeld van x
+        \item A: bronverzameling
+        \item B: doelverzameling
+        \item $\forall x \in A: (x,y) \in R \land (x,y') \in R \Rightarrow y = y'$
+    \end{itemize}
+    \item notatie:
+    \begin{itemize}
+        \item f functie A naar B: f:A$\rightarrow$B
+        \item f beeld x af op E: f:x$\mapsto$E
+        \item $\Rightarrow f:A \rightarrow B: x \mapsto E$
+        \item beeld van x onder f: f(x)
+    \end{itemize}
+    \item domein van f: A $\rightarrow$ B is $\{x| \exists y: (x,y) \in f\}$
+    \item bereik van f: A $\rightarrow$ B is $\{y| \exists y: (x,y) \in f\}$
+\end{itemize}
+
+\subsection{Afbeeldingen}
+\begin{itemize}
+    \item $f: A \rightarrow B$ is een afbeelding van A naar B asa voor elke x $\in$ A precies 1 (x,y) $\in$ f bestaat
+    \item afbeelding $f: A \rightarrow B$ is een surjectie asa elke y $\in$ B het beeld is van x $\in$ A
+    \item afbeelding $f: A \rightarrow B$ is een injectie asa elke x $\in$ A op een verschillende y $\in$ B afgebeeld wordt
+    \item \quad $\Rightarrow$ surjectie: elke y gebruikt, soms door meerder x. injectie: elke x naar 1 andere y, niet per se alle y gebruikt
+    \item bijectie: 1-op-1-afbeelding: voor elke x 1 (x,y) en voor elke y 1 (x,y)
+    \item transformatie: afbeelding als A = B: $f: A \rightarrow A$ transformatie asa elke x $\in$ A beeld  heeft onder f
+    \item permutatie: bijectie als A = B: $f: A \rightarrow A$ permutatie asa elke x $\in$ A beeld onder f en precies 1 beeld x onder f
+\end{itemize}
+
+\subsection{Functie met meerdere argumenten: f(x,y,...)}
+voor elke tupel $(x_{1},x_{2},...,x_{n})$ hoogstens 1 y $\in$ B zo dat $(x_{1},x_{2},...,x_{n},y) \in R$
+
+\subsection{Operatoren op functies}
+\begin{itemize}
+    \item samenstelling van $f: A \rightarrow B$ en $g: B \rightarrow C$ = $h: A \rightarrow C : x \mapsto g(f(x))$ \newline andere notatie: g $\circ$ f, als f $\circ$ f = $f^2$
+    \item inverse functie $f^{-1}: B \rightarrow A$ met $f(x) = y \iff f^{-1} = x$ 
+    \newline $\Rightarrow$ moet voldaan: : $f: A \rightarrow B$ met $\forall x \in A: f(x) = f(x') \Rightarrow x=x'$ 
+    \newline $\Rightarrow$ inverteerbaar
+    \item identiteitsfunctie: $i_{A} : A \rightarrow A : x \mapsto x$ 
+    \newline $\Rightarrow$ zij f : A $\rightarrow$ B inverteerbare afbeelding dan $f^{-1} \circ f = i_{A}$
+\end{itemize}
 
 \section{Oefeningen}
 \href{https://docs.google.com/spreadsheets/d/1thtWaGEHPFeVuYDWK-XKuEimLSO2Zc_yDwdODAbYIok/edit#gid=0}{Google Spreadsheet}
