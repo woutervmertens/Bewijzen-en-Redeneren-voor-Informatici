@@ -149,9 +149,32 @@ Bewijsstrategieën:
     \item door inductie
 \end{itemize}
 
+\section{Relaties}
+\begin{itemize}
+    \item tupel: n objecten $x_{1},x_{2},...,x_{n}$ als 1 object ($x_{1},x_{2},...,x_{n}$)
+    \item koppel: 2-tupel: vb (x,y)
+    \item Cartesisch product: $A \times B = \{(x,y) | x \in A \land y \in B \}$ 
+    \newline vb: A = $\{S,M,L\}, B = \{z,w\}$
+    \newline $A \times B = \{(S,z),(S,w),(M,z),(M,w),(L,z),(L,w)\}$
+    \newline $A_{1} \times A_{2} \times ... \times A_{n} = \{(x_1,x_2,...,x_n)|x_1 \in A_1 \land ... \land z_n \in A_n \}$
+    \newline $A^1 = A \quad en \quad \forall n > 1 : A^n = A^{n-1} \times A$
+    \item Relaties: verband tussen 2 of meer dingen
+    \begin{itemize}
+        \item relatie tussen A en B is deelverzameling van A $\times$ B
+        \item notatie: R(x,y)
+        \item grafisch diagram A en B met pijlen van x naar y
+    \end{itemize}
+    \item Inverse relatie: $R^{-1} = \{(x,y)|(y,x)\in R\}$
+    \item Samengestelde relatie = samenstelling: $S \circ R$ (= "S na R") = $\{(x,y)|\exists x \in B:(x,z)\in R \land (z,y)\in S\}$ met $R\subseteq A \times B$ en $S\subseteq C \times D$
+    \begin{itemize}
+        \item voor alle binaire relaties R,S,T: T $\circ$ (S $\circ$ R) = (T $\circ$ S) $\circ$ R
+        \item R binaire relatie: $R^1$ = R en $\forall n > 1: R^n = R \circ R^{n-1}$
+    \end{itemize}
+\end{itemize}
+
 \section{Functies}
 \begin{itemize}
-    \item relatie $R \subseteq A x B$ is functie A naar B asa voor elke x $\in$ A hoogstens 1 (x,y) $\in$ R bestaat.
+    \item relatie $R \subseteq A \times B$ is functie A naar B asa voor elke x $\in$ A hoogstens 1 (x,y) $\in$ R bestaat.
     \begin{itemize}
         \item y: beeld van x
         \item A: bronverzameling
