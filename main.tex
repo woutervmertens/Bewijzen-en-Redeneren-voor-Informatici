@@ -1,7 +1,9 @@
 \documentclass{article}
+\usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\graphicspath{ {images/} }
 
 \title{Bewijzen en Redeneren voor Informatici}
 \date{2019 - 2020}
@@ -214,6 +216,73 @@ voor elke tupel $(x_{1},x_{2},...,x_{n})$ hoogstens 1 y $\in$ B zo dat $(x_{1},x
     \newline $\Rightarrow$ inverteerbaar
     \item identiteitsfunctie: $i_{A} : A \rightarrow A : x \mapsto x$ 
     \newline $\Rightarrow$ zij f : A $\rightarrow$ B inverteerbare afbeelding dan $f^{-1} \circ f = i_{A}$
+\end{itemize}
+
+\section{Equivalentierelaties en orderelaties}
+\subsection{Binaire relaties over dezelfde verzameling:} \quad $R \subseteq A \times A$ 
+\begin{itemize}
+    \item Reflexiviteit: 
+    \begin{itemize}
+        \item $R \subseteq A \times A$ is reflexief asa $\forall x \in A:(x,x) \in R$
+        \item $R \subseteq A \times A$ is anti-reflexief asa $\forall x \in A:(x,x) \notin R$
+    \end{itemize}
+    vb: reflexief: $\leq$ want x $\leq x$ \newline
+    vb: anti-reflexief: $<$ want x $<$ x voor geen enkele x
+    \item Symmetrie:
+    \begin{itemize}
+        \item $R \subseteq A \times A$ symmetrisch asa $\forall x,y \in A:(x,y) \in R \iff (y,x) \in R$
+        \item $R \subseteq A \times A$ anti-symmetrisch asa $\forall x,y \in A:(x,y) \in R \land (y,x) \in R \Rightarrow x = y$
+    \end{itemize}
+    \item Transiviteit: $R \subseteq A \times A$ transitief asa $\forall x,y,z \in A:(x,y) \in R \land (y,z) \in R \Rightarrow (x,z) \in R$
+\end{itemize}
+\subsection{Equivalentierelaties}
+= een relatie die reflexief, symmetrisch en transitief is. Symbool: $\sim$
+\begin{itemize}
+    \item Equivalentieklasse van x $\in$ A en A heeft equivalentierelatie
+    \newline \quad = K(x): verzameling van alle elementen van A die equivalent zijn met x
+    \newline \quad K(x) = $\{y \in A| x \sim y\}$
+    \newline eig:
+    \begin{itemize}
+        \item alle elementen in een equivalentieklasse zijn equivalent met elkaar
+        \item Als $x \sim y$, is K(x) = K(y)
+        \item Als $x \not \sim y$, is K(x) $\cap$ K(y) = $\emptyset$
+    \end{itemize}
+    \item Partitie: P = $\{P_1,P_2,...,P_k\}$ is een partitie van A asa
+    \begin{itemize}
+        \item $\forall x \in A: \exists ! P_i \in P: x \in P_i$
+        \item $\forall P_i \in P: P_i \neq \emptyset$
+    \end{itemize}
+    \item Quotiëntverzameling (= de partitie van A die bestaat ui alle equivalentieklassen van A onder $\sim$) A/$\sim$ : "A onder $\sim$": A heeft equivalentierelatie $\sim$
+\end{itemize}
+\subsection{Orderelaties}
+= relatie die reflexief, antisymmetrisch en transitief is
+\begin{itemize}
+    \item[$*$] voor willekeurige orderelatie: $x \preceq y$: "x komt voor of is gelijk aan y"
+    \item[$*$] geordende verzameling A,$\preceq$
+\end{itemize}
+\begin{itemize}
+    \item totale orde: orderelatie waarvoor geldt: $\forall x,y: x \preceq y \lor y \preceq x$, anders: partiële orde
+    \item bovengrens voor X: $a \in A$ als $\forall x \in X: x \preceq a$
+    \item ondergrens voor X: $a \in A$ als $\forall x \in X: a \preceq x$
+    \item supremum van X: bovengrens b van X zodat b $\preceq$ b' voor alle bovengrenzen b' van X
+    \newline = kleinste bovengrens voor X, als die bestaat
+    \item infimum van X: ondergrens o van X zodat o' $\preceq$ o voor alle ondergrenzen o' van X
+    \newline = grootste ondergrens voor X, als het bestaat
+\end{itemize}
+\subsection{Tralies}
+\begin{itemize}
+    \item complete tralie: geordende verzameling A,$\preceq$ met de eigenschap dat elke eindige verzameling X $\subseteq$ A een supremum en infumum in A heeft
+    \item grafish \newline tralie van P({a,b,c}),$\subseteq$ \newline \includegraphics{tralie} \newline
+    tralie van $\mathbb{N} ,\leq$
+    \newline \quad 0 - 1 - 2 - 3 - 4 - 5 - ...
+    \item voor eender welke verzameling U geldt: P(U),$\subseteq$ is een complete tralie
+\end{itemize}
+\subsection{Quasi-ordes}
+= relatie die reflexief en transitief is
+$\Rightarrow$ veralgemeent equivalentierelaties als orderelaties
+\begin{itemize}
+    \item symmetrische quasi-orde = equivalentierelatie
+    \item anti-symmetrische quasi-orde = orderelatie
 \end{itemize}
 
 \section{Oefeningen}
