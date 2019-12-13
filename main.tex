@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
+\usepackage{amsmath}
 \usepackage{hyperref}
 \graphicspath{ {images/} }
 
@@ -283,6 +284,114 @@ $\Rightarrow$ veralgemeent equivalentierelaties als orderelaties
 \begin{itemize}
     \item symmetrische quasi-orde = equivalentierelatie
     \item anti-symmetrische quasi-orde = orderelatie
+\end{itemize}
+
+\section{Kardinaliteit}
+\subsection{Kardinaliteit van een verzameling}
+= het aantal elementen dat de verzameling bevat, notatie $|S|$ of \#S voor verzameling S
+\begin{itemize}
+    \item kardinaalgetal = antwoord: "Hoeveel elementen bevat deze verzameling?"
+    \item eindige/oneindige kardinaalgetallen
+    \item $\aleph_0$ = $|\mathbb{N}|$ ("aleph-nul")
+    \item A en B zijn 2 verzamelingen: $|A| \leq |B|$ asa er bestaat injectie van A naar B (B meer elementen dan A)
+    \item $|A| = |B|$ asa er bestaat bijectie tussen A en B (1 op 1)
+    \item een (oneindige) verzameling kan een bijectie hebben naar een strikte deelverzameling van zichzelf
+    \item $\aleph_0 + n = n \aleph_0 = \aleph_0^n = \aleph_0$  
+\end{itemize}
+\subsection{Telproblemen}
+\begin{itemize}
+    \item Kardinaliteit van unie: 
+    \begin{itemize}
+        \item Als A en B disjunct, dan $|A \cup B| = |A| + |B|$
+        \newline bewijs: $A \cup B = A \setminus B + A \cap B + B \setminus A$
+        \newline $\Rightarrow A \cup B$ is unie 3 disjuncte delen
+        \newline $\Rightarrow$ A en B unie van 2 disjuncte delen
+        \\\\ A en B disjunct dus geen enkel element komt 2 keer voor
+        \\ $\Rightarrow$ in totaal eerst $|A|$, dan $|B|$ elementen, dus $|A| + |B|$ \quad $\square$
+        \item $|A \cup B| = |A| + |B| - |A \cap B|$
+        \newline bewijs: $|A \cup B| = |A \cap B| + |A \setminus B| + |B \setminus A|$
+        \\ $|A| = |A \cap B| + |A \setminus B|$
+        \\ $|B| = |A \cap B| + |B \setminus A|$
+        \begin{equation*}
+            \begin{split} 
+                \Rightarrow |A \cup B| & = |A \cap B| + |A \setminus B| + |B \setminus A| \\ & = |A| + |B \setminus A| \\ & = |A| + |B| - |A \cap B| \quad \square
+            \end{split}
+        \end{equation*}
+        \item $ |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$
+        \newline bewijs: 
+        \begin{equation*}
+            \begin{split}
+                |(A \cup B) \cup C| & = |A \cup B| + |C| - |(A \cup B) \cap C| \\
+                & = |A \cup B| + |C| - |(A \cap C) \cup (B \cap C)| \\
+                & = (|A| + |B| - |A \cap B|) + |C| - (|A \cap C + B \cap C - |(A \cap C) \cap (B \cap C)|) \\
+                & = |A| + |B| + |C| - |A \cap B| - (|A \cap B| - |A \cap C| - |B \cap C| + |(A \cap C) \cap (B \cap C)| \\
+                & = |A| + |B| + |C| - |A \cap B| - (|A \cap B| - |A \cap C| - |B \cap C| + |(A \cap B \cap C)| \quad \square
+            \end{split}
+        \end{equation*}
+    \end{itemize}
+    \item inclusie - exclusie - principe: voor meer dan 3 verzamelingen: \\
+    tel de kardinaliteiten van doorsnedes van 1,3,5,... verzamelingen bij elkaar op en trek de kardinaliteiten van doorsnedes 2,4,6,... verz. hiervan af, en dit voor alle combinaties van verzamelingen die mogelijk zijn
+    \begin{equation*}
+        formule: |\cup_{i=1}^n A_i| = \sum_{I \subseteq \{1,2,...,n\}, |I| oneven} |\cap_{i \in I} A_i| - \sum_{I \subseteq \{1,2,...,n\}, |I| even} |\cap_{i \in I} A_i|
+    \end{equation*}
+    \item kardinaliteit van Cartesisch product
+    \begin{itemize}
+        \item $|A \times B| = |A||B|$
+        \item algemeen: $|A_1 \times A_2 \times ... \times A_k| = |A_1||A_2|...|A_k| \Rightarrow |A^n| = |A|^n$
+    \end{itemize}
+    \item kardinaliteit van machtsverzameling
+    \begin{itemize}
+        \item $|P(A)| = 2^{|A|}$
+        \item soms notatie machtsverzameling van A: $2^A$
+    \end{itemize}
+    \item Aantal afbeeldingen van A naar B
+    \begin{itemize}
+        \item notatie: verzameling van alle afbeeldingen van A naar B = $B^A$
+        \item $|B^A| = |B|^{|A|}$
+        \item vb: 3 mensen, 5 objecten, mogelijke voorkeuren: $5^3 = 125$
+    \end{itemize}
+    \item Aantal injecties $A \rightarrow B$
+    \begin{itemize}
+        \item notatie: n! = n(n - 1)(n - 2)...(2)(1) met (0! = 1)
+        \item als $|A| \leq |B|: |B|(|B| - 1)...(|B| - |A| + 1) = |B|! / (|B| - |A|)!$
+        \item vb: 3 pers, 5 objecten, kies 1 na 1, zonder terugleggen: 5 x 4 x 3 = 60
+    \end{itemize}
+    \item Aantal bijecties $A \rightarrow B$
+    \begin{itemize}
+        \item aantal bijecties van A naar B = 0 als $|A| \not = |B|$, else $|A|!$
+        \item bew: $|A| \not = |B| \Rightarrow$ er bestaat geen bijectie
+        \item bew: $|A| = |B| \Rightarrow |B|!/(|B| - |A|)! = |B|!/0! = |B|! = |A|!$
+    \end{itemize}
+    \item Aantal permutaties van A \\ 
+    = aantal volgordes waarin de elementen van een verzameling opgelijst kunnen worden \\ 
+    = bijectie van $A \rightarrow A \Rightarrow |A|!$ permutaties
+    \item Aantal deelverzamelingen van k elementen van een verzameling met kardinaliteit n
+    \begin{itemize}
+        \item combinatie van k elementen uit verzameling A is een deelverzameling van A met k elementen
+        \item als k > n: 0
+        \item als k $\leq$ n: $\frac{n!}{k!(n-k)!} = \binom{n}{k}$
+    \end{itemize}
+\end{itemize}
+\subsection{Kardinaliteit van oneindige verzamelingen}
+\begin{itemize}
+    \item $|\mathbb{N}| = \aleph_0$
+    \item $|\mathbb{Z}| = \aleph_0$
+    \item $|\mathbb{Q}| = \aleph_0$
+    \item $|\mathbb{R}|$: er bestaat geen tussen $\mathbb{R}$ en $\mathbb{N}$
+    \\ $\Rightarrow |\mathbb{R}| > \aleph_0$ met $10^{\aleph_0}$ rijen
+    \\ $\Rightarrow c > 1: c^{\aleph_0} > \aleph_0$ met c = $|\mathbb{R}|$
+    \item een verzameling met kardinaliteit = $\aleph_0$ = aftelbaar oneindig
+    \item een verzameling met kardinaliteit > $\aleph_0$ = onaftelbaar/overaftelbaar
+    \\ $\Rightarrow$ niet mogelijk methode te bedenken die alle elementen oplijst
+    \item Rekenen met oneindige kardinaalgetallen
+    \begin{itemize}
+        \item voor elke n $\in \mathbb{N}$ geldt: $n + \aleph_0 = \aleph_0 + n = \aleph_0$
+        \item voor elke n $\in \mathbb{N}$ geldt: $n\aleph_0 = \aleph_0 n = \aleph_0$
+        \item voor elke n $\in \mathbb{N}$ geldt: $\aleph_0 ^ n = \aleph_0$
+        \item voor elke n $\in \mathbb{N}$ met $n > 1$ geldt: $n ^ {\aleph_0} >= \aleph_0$
+        \item het aantal deelverzamelingen van $\mathbb{N}$ is $2^{\aleph_0} > \aleph_0$
+        \item het aantal functies van $\mathbb{N}$ naar $\mathbb{N}$ is $\aleph_0^{\aleph_0} > \aleph_0$
+    \end{itemize}
 \end{itemize}
 
 \section{Oefeningen}
